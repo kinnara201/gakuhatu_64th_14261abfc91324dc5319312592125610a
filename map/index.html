@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>第64回 学芸発表会</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="icon_Nobackground.png">
+</head>
+<body>
+  <header class="top-bar">
+    <div class="header-logo">
+      <a href="#">
+        <img src="icon_Nobackground.png" alt="ロゴ" class="logo-img">
+      </a>
+    </div>
+<div class="header-nav">    
+<div class="header-item lang-dropdown">
+    <button type="button" class="lang-btn" id="lang-btn">
+      <svg class="header-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="12" cy="12" r="10"></circle>
+        <line x1="2" y1="12" x2="22" y2="12"></line>
+        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+      </svg>
+      <span>Language</span>
+      <span class="arrow-icon"></span>
+    </button>
+
+    <!-- 言語ページの外部リンク（メニュー） -->
+    <ul class="lang-menu">
+      <li><a href="index.html" class="active">日本語</a></li>
+      <li><a href="index-en.html">English</a></li>
+      <li><a href="index-zh.html">中文（簡体字）</a></li>
+      <li><a href="index-tw.html">中文（繁体字）</a></li>
+      <li><a href="index-ko.html">한국어</a></li>
+    </ul>
+  </div>
+
+      <button class="header-item menu-btn" id="menuBtn">
+        <svg class="header-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+        <span>メニュー</span>
+      </button>
+    </div>
+  </header>
+  <div class="menu-overlay" id="menuOverlay"></div>
+
+  <nav class="drawer-menu" id="drawerMenu">
+    <div class="drawer-header">
+      <span>メニュー</span>
+      <button class="close-btn" id="closeBtn">&times;</button>
+    </div>
+    <ul class="drawer-list">
+      <li><a href="#">ホーム</a></li>
+      <li><a href="#">校内図</a></li>
+      <li><a href="#">施設案内</a></li>
+      <li><a href="#">団体・スケジュール検索</a></li>
+      <li><a href="#">トピックス・お知らせ</a></li>
+      <li><a href="#">アクセス</a></li>
+      <li><a href="#">皆様へのお願い</a></li>
+      <li><a href="#">お問い合わせ</a></li>
+      <li><a href="#">作成:電子電脳技術研究会</a></li>
+    </ul>
+  </nav>
+<div class="schedulenoticea">団体名・施設検索(詳細は検索結果をクリック)</div>
+<div class="search-container">
+  <input type="text" id="search-input" class="search-input" placeholder="キーワードを入力（例：育鳳館、化研）...">
+  
+  <!-- 検索結果がここに動的生成されます -->
+  <ul id="search-results" class="search-list"></ul>
+  <p id="no-results" class="no-results" style="display: none;">該当する項目が見つかりません</p>
+</div>
+
+<!-- 外部データと検索処理スクリプトを読み込み -->
+  <main class="content">
+<div class="card fade-in-target">
+  <p class="schedule">校内図</p>
+  <img class="schedulepicture" src="学発校内図.png">
+    <div class="card-buttons">
+      <a href="#" class="btn-outline2">迷ったら</a>
+      <a href="#" class="btn-outline2">施設一覧を見る</a>
+    </div>
+</div>
+        <div class="card">
+          <h2 class="topics">詳しいご案内・ご注意</h2>
+          <hr class="sikiri">
+           <a class="topicpq">三階が一年、二階が二年、一回が三年となっています</a>
+           <a class="topicpq">育鳳館側が五組教室、反対の校門側が一組教室です</a>
+           <a class="topicpq">桐陰会館へは一度育鳳館の前をお通りいただき、外に出る必要があります(詳細はクリック)</a>
+           <a class="topicpq">階段は育鳳館側と校門側の二つがございますのでご注意ください</a>
+           <a class="topicpq">一階は大変混雑しますので、三階の展示へおいでの際は、三階廊下での移動が便利です</a>
+        </div>
+  <footer class="site-footer">
+    
+    <!-- ★ ここから追加：フッターアコーディオン -->
+    <div class="footer-accordion">
+      
+      <!-- メニュー項目 1 -->
+      <div class="accordion-item">
+        <button class="accordion-btn">
+          <span>校内図・施設検索</span>
+          <span class="arrow"></span>
+        </button>
+        <div class="accordion-content">
+          <ul>
+            <li><a href="#">校内施設検索</a></li>
+            <li><a href="#">構内図</a></li>
+            <li><a href="#">迷ったら</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- メニュー項目 2 -->
+      <div class="accordion-item">
+        <button class="accordion-btn">
+          <span>団体検索・スケジュール表</span>
+          <span class="arrow"></span>
+        </button>
+        <div class="accordion-content">
+          <ul>
+            <li><a href="#">団体を探す</a></li>
+            <li><a href="#">スケジュール表・スケジュール検索</a></li>
+            <li><a href="#">おすすめの団体を探す</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- メニュー項目 3 -->
+      <div class="accordion-item">
+        <button class="accordion-btn">
+          <span>トピックス・お知らせ</span>
+          <span class="arrow"></span>
+        </button>
+        <div class="accordion-content">
+          <ul>
+            <li><a href="#">外来の皆様へのお願い</a></li>
+            <li><a href="#">皆様へのお知らせ</a></li>
+            <li><a href="#">在校生向け</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- メニュー項目 4 -->
+      <div class="accordion-item">
+        <button class="accordion-btn">
+          <span>アクセス</span>
+          <span class="arrow"></span>
+        </button>
+        <div class="accordion-content">
+          <ul>
+            <li><a href="#">地下鉄(東京メトロ)ご利用の皆様</a></li>
+            <li><a href="#">バス、そのほか徒歩などご利用の皆様</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- メニュー項目 5 -->
+      <div class="accordion-item">
+        <button class="accordion-btn">
+          <span>そのほか</span>
+          <span class="arrow"></span>
+        </button>
+        <div class="accordion-content">
+          <ul>
+            <li><a href="#">本校について</a></li>
+            <li><a href="#">そのほかご案内</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- 既存のクレジット表記 -->
+    <div class="footer-inner">
+      <p class="copyright">第64回 学芸発表会準備小委員会</p>
+    </div>
+    <div class="footer-inner">
+      <a href="#"class="copyright">作成:電子電脳技術研究会</a>
+    </div>
+
+  </footer>
+
+  <nav class="bottom-nav">
+    <a href="#" class="bottom-nav-item">
+      <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="12" cy="12" r="10"></circle>
+        <polyline points="12 6 12 12 16 14"></polyline>
+      </svg>
+      <span>場所・時刻検索</span>
+    </a>
+
+    <a href="#" class="bottom-nav-item">
+            <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M21 10.5c0 7.35-9 12.6-9 12.6s-9-5.25-9-12.6a9 9 0 0 1 18 0z"></path>
+  <circle cx="12" cy="10.5" r="3.15"></circle>
+</svg>
+      <span>施設検索・校内図</span>
+    </a>
+  </nav>
+<script src="data.js"></script>
+<script src="search-data.js"></script>
+</body>
+</html>
